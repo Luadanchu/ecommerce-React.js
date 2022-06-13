@@ -1,10 +1,14 @@
 
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <h1>E-commerce React.js</h1>
+      <header>
+        <img className="logoNav" src={require('./imagenes/nav-logo.png')} alt="logo"/>
+        <NavBar/>
+      </header>
     </div>
   );
 }
