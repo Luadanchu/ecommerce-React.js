@@ -1,21 +1,24 @@
 nav{
     display: flex;
-    justify-content: left;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .2rem;
+    margin-top: .4rem;
 }
 ol{
-    height: 60vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 ol li{
     list-style-type: none;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 1rem .5rem;
-    width: 100%;
+    padding: .5rem;
+    margin: 0 1rem;
 }
 li a {
     text-decoration: none;
     color: black;
+    font-weight: 550;
 }

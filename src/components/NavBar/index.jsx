@@ -1,5 +1,6 @@
 import React from "react";
-import '../styleSheets/NavBar.css';
+import './style.css';
+import CardWidget from '../CardWidget/index.jsx'
 
 const NavBar = () =>{
     return(
@@ -11,6 +12,7 @@ const NavBar = () =>{
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ol>
+            <CardWidget/>
         </nav>
     )
 }
