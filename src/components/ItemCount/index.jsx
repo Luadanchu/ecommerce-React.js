@@ -14,7 +14,7 @@ const ItemCount = ( {handleAdd, stock, initial} ) => {
       }
     }
 
-    const onDecrement = () =>{
+    const onRemove = () =>{
       if (count !== 0){
         setCount(count - 1)
       }
@@ -29,8 +29,8 @@ const ItemCount = ( {handleAdd, stock, initial} ) => {
     <div className='buttonCard' >
       <p className='txtCant' >{count}</p>
         <div className='buttons' >
-          <button onClick={onAdd} className='buttonAddDec' >+</button>
-          <button onClick={onDecrement} className='buttonAddDec' >-</button>
+          <button onClick={onAdd} className='buttonAddRem' >+</button>
+          <button onClick={onRemove} className='buttonAddRem' >-</button>
         </div>
         <button onClick={handleAdd} className='buttonAddToCart' >Add to cart</button>
         <button onClick={resetCount} className='buttonCleanCart' >Clean cart</button>
