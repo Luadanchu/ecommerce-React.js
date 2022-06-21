@@ -1,0 +1,47 @@
+.buttonCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #9ca8c8;
+    border-radius: 5%;
+    background-color: #b5c4ea;
+}
+
+.txtCant{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    padding: .5rem 0 1rem 0;
+}
+
+.buttons{
+    width: 100%;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #879edd;
+    border: 1px solid #6f82b6;
+    border-radius: 8%;
+}
+.buttonAddDec{
+    padding: .3rem .5rem;
+    background-color: #879edd;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.buttonAddToCart,
+.buttonCleanCart{
+    width: 100%;
+    padding: .3rem;
+    background-color: #eaeaea;
+    border: 1px solid #6f82b6;
+    border-radius: 8%;
+    font-size: .9rem;
+}
+.buttonCleanCart{
+    margin-top: .5rem;
+}

@@ -6,12 +6,12 @@ import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <header>
         <img className="logoNav" src='/imagenes/navLogo.png' alt="logo" />
-        <NavBar/>
+        <NavBar />
       </header>
-      <ItemListContainer greeting={"E-commerce"}></ItemListContainer>
+      <ItemListContainer greeting={"E-commerce"} ></ItemListContainer>
     </div>
   );
 }
