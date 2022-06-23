@@ -11,7 +11,7 @@ function App() {
         <img className="logoNav" src='/imagenes/navLogo.png' alt="logo" />
         <NavBar />
       </header>
-      <ItemListContainer greeting={"E-commerce"} ></ItemListContainer>
+      <ItemListContainer greeting={"Tienda"} ></ItemListContainer>
     </div>
   );
 }

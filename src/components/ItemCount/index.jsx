@@ -21,7 +21,7 @@ const ItemCount = ( {handleAdd, stock, initial} ) => {
     }
 
     const resetCount = () => {
-      setCount(0)
+      setCount(initial)
       console.log("Se eliminó del carrito")
     }
 

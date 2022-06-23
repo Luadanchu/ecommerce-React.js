@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemCount from '../ItemCount'
+import ItemList from '../ItemList'
 import './style.css'
 
 const ItemListContainer = ({ greeting }) => {
@@ -10,8 +11,8 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div>
         <p className='texto'>{greeting}</p>
-
-        <ItemCount handleAdd={handleAdd} initial={1} stock={3} />
+        <ItemList />
+        <ItemCount handleAdd={ handleAdd } initial={ 1 } stock={ 3 } />
     </div>
   )
 }
