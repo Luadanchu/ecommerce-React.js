@@ -26,9 +26,7 @@ const ItemListContainer = ({ greeting }) => {
 
   //console.log(products)
 
-  const handleAdd = (count) =>{
-    console.log(`Se agregaron ${count} productos al carrito`) //Alert?
-  }
+  
 
   return (
     <div className='itemListContainer'>

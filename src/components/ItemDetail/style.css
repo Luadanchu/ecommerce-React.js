@@ -1,18 +1,32 @@
 
 .itemDetailCard{
     display: flex;
+    align-items: center;
     border: 1px solid black;
     padding: 1rem 3rem;
     width: 80%;
     margin: 0 auto;
 }
 .imgItemDetailCard{
-    width: 20%;
-    margin-right: 5rem;
+    height: 400px;
 }
 .descrptionItemDetailCard{
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+h4{
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0 0 1rem 0;
+}
+p{
+    text-align: center;
+    padding: .5rem;
+    padding: 0 0 1rem 0;
+}
+.txtPrecio{
+    font-size: 1.3rem;
+    font-weight: 600;
 }

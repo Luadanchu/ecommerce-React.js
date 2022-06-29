@@ -2,10 +2,13 @@ import React from 'react'
 import ItemCount from '../ItemCount'
 import './style.css'
 
-const ItemDetail = ({ product, handleAdd }) => {
+const ItemDetail = ({ product }) => {
 
     //console.log(product)
-    //console.log(product.rating.count) => lo lee, pero no lo toma como prop
+
+    const handleAdd = (count) =>{
+      console.log(`Se agregaron ${count} productos al carrito`) //Alert?
+    }
 
   return (
     <div className='itemDetailCard'>
@@ -13,8 +16,8 @@ const ItemDetail = ({ product, handleAdd }) => {
       <div className='descrptionItemDetailCard'>
       <h4>{product.title}</h4>
       <p>{product.description}</p>
-      <p> $ {product.price}</p>
-      <ItemCount handleAdd={ handleAdd } initial={1} stock={ 3 } /> 
+      <p className='txtPrecio'> $ {product.price}</p>
+      <ItemCount handleAdd={ handleAdd } initial={1} stock={ product?.rating?.count } /> 
       </div>
     </div>
   )
