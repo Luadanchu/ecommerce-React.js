@@ -8,17 +8,12 @@ const ItemCount = ( {handleAdd, stock, initial} ) => {
     const [count, setCount] = useState(initial)
 
     const onAdd = () =>{
-
-      if (count <= stock - 1){
-      setCount(count + 1)
-      }
+      (count <= stock - 1) ? setCount(count + 1) : alert(`stock máximo: ${stock} unidades`)
     }
 
     const onRemove = () =>{
-      if (count !== 0){
-        setCount(count - 1)
-      }
-    }
+      (count !== 0) ? setCount(count - 1) : alert(`Compra mínima: ${initial} unidades`)
+    } //Ver que pasa cuando me quedo sin stock (desabilitar la card?)
 
     const resetCount = () => {
       setCount(initial)
@@ -32,7 +27,7 @@ const ItemCount = ( {handleAdd, stock, initial} ) => {
           <button onClick={onAdd} className='buttonAddRem' >+</button>
           <button onClick={onRemove} className='buttonAddRem' >-</button>
         </div>
-        <button onClick={handleAdd} className='buttonAddToCart' >Add to cart</button>
+        <button onClick={() => handleAdd(count)} className='buttonAddToCart' >Add to cart</button>
         <button onClick={resetCount} className='buttonCleanCart' >Clean cart</button>
     </div>
   )

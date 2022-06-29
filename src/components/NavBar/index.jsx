@@ -7,12 +7,9 @@ const NavBar = () =>{
         <nav>
             <ol>
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#productos">Tienda</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#tienda">Tienda</a></li>
             </ol>
-            <CardWidget/>
+            <CardWidget value={0}/>
         </nav>
     )
 }

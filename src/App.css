@@ -10,6 +10,7 @@
   align-items: center;
   background-color: #eaeaea;
   height: 100vh;
+  padding: 2rem;
 }
 
 header{
@@ -19,8 +20,7 @@ header{
   padding: .5rem 1rem;
   background-color: #c9c9c9;
   height: 12%;
-  
-  width: 95vw;
+  width: 100%;
 }
 
 .logoNav{

@@ -3,15 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    border: 1px solid #9ca8c8;
+    padding: .5rem 3rem;
+    /* border: 1px solid #9ca8c8;
     border-radius: 5%;
-    background-color: #b5c4ea;
+    background-color: #b5c4ea; */
 }
 
 .txtCant{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: .5rem 0 1rem 0;
 }
 
@@ -21,20 +21,23 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #879edd;
-    border: 1px solid #6f82b6;
+    /* background-color: #879edd; */
+    border: 1px solid #6f82b600;
     border-radius: 8%;
 }
-.buttonAddRem{
+/* .buttonAddRem{
     padding: .3rem .5rem;
+    background-color: #eaeaea;
+    border: 1px solid #6f82b6;
     background-color: #879edd;
     border: none;
     font-size: 1rem;
     font-weight: 600;
-}
+} */
 
 .buttonAddToCart,
-.buttonCleanCart{
+.buttonCleanCart,
+.buttonAddRem{
     width: 100%;
     padding: .3rem;
     background-color: #eaeaea;
