@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-// import ItemCount from '../../components/ItemCount'
+import { useParams } from 'react-router-dom'
 import ItemList from '../../components/ItemList'
 import './style.css'
 
 const ItemListContainer = ({ greeting }) => {
 
   const [products, setProducts] = useState([])
+  const [productsFilter, setproductsFilter ] = useState([]);
+  const params = useParams()
+  //console.log(param)
   
   useEffect(() => {
     setTimeout(() => {
@@ -24,15 +27,19 @@ const ItemListContainer = ({ greeting }) => {
 
   }, [])
 
-  //console.log(products)
-
+  useEffect(() => {
+    if(params?.idCategory){
+      const productsFilter = products.filter(producto => producto.category === params.idCategory)
+      setproductsFilter(productsFilter); 
+    }  
+  }, [params, products])
   
+  //console.log(products)
 
   return (
     <div className='itemListContainer'>
         <p className='texto'>{greeting}</p>
-        {products ? <ItemList products={products}/> : null }
-        {/* <ItemCount handleAdd={ handleAdd } initial={1} stock={3} /> */}
+        {products ? <ItemList products={params?.idCategory ? productsFilter : products}/> : <h5>Acá iría el loader</h5> }
 
     </div>
   )
@@ -41,7 +48,7 @@ const ItemListContainer = ({ greeting }) => {
 export default ItemListContainer
 
 
-//ACÁ VA TODA LA LÓGICA => Puedo hacer la petición en un helper (carpeta + archivo promesa.js)
+//ACÁ VA TODA LA LÓGICA => Puedo hacer la petición en un helper
 
 /* Este es el contenedor de la tienda, itemList: contenedor de cards, y el Item es la card en sí*/
 

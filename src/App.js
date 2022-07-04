@@ -1,31 +1,28 @@
 
 import './App.css';
-// import ItemListContainer from './containers/ItemListContainer';
+import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import NavBar from './components/NavBar';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import NotFound from './components/NotFound';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NotFound from './components/NotFound';
+import Cart from './containers/Cart';
 // import '/imagenes/navLogo.png'
 
 function App() {
   return (
-    <div className="App" >
-      <header>
-        <img className="logoNav" src='/imagenes/navLogo.png' alt="logo" />
-        <NavBar />
-        {/* <BrowserRouter>
+    <BrowserRouter>
+      <div className="App" >
+          <NavBar />
           <Routes>
-            <Route path='/' element={<ItemListContainer /> } />
-
-            <Route path='*' element={<NotFound /> } />
+            <Route path='/' element={<ItemListContainer greeting={"Welcome"} />} />
+            <Route path='/category/:idCategory' element={<ItemListContainer />} />
+            <Route path='/detail/:idProduct' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
-        </BrowserRouter> */}
-      </header>
-      {/* <ItemListContainer greeting={"Tienda"} ></ItemListContainer> */}
-      <ItemDetailContainer />
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
-

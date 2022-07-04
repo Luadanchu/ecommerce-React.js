@@ -4,7 +4,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 
 const CardWidget = () => {
   return (
-    <FaShoppingCart size={43} className='cartIcon'/>
+    <FaShoppingCart size={23} className='cartIcon' value={3}/>
   )
 }
 

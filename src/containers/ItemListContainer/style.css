@@ -1,9 +1,8 @@
 
 .itemListContainer{
-    padding: 10rem;
+    padding: 0.5rem;
 }
 .texto{
     font-family: 'Trebuchet MS';
-    font-size: 1.5rem;
-    margin-top: 2rem;
+    /* font-size: 1.5rem; */
 }
