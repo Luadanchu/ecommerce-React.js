@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../../components/ItemList'
+import Loader from '../../components/Loader'
 import './style.css'
 
 const ItemListContainer = ({ greeting }) => {
@@ -39,7 +40,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div className='itemListContainer'>
         <p className='texto'>{greeting}</p>
-        {products ? <ItemList products={params?.idCategory ? productsFilter : products}/> : <h5>Acá iría el loader</h5> }
+        {products ? <ItemList products={params?.idCategory ? productsFilter : products}/> : <Loader /> }
 
     </div>
   )
