@@ -7,9 +7,9 @@ const Item = ({ product }) => {
   return (
     <div className='card'>
       <img className='imgCard' src={product.image} alt='' />
-      <h4>{product.title}</h4>
-      <p> $ {product.price}</p>
-      <button><Link to={`/detail/${product.id}`}>Ir al detalle</Link></button>
+      <h4 className='titCard'>{product.title}</h4>
+      <p className='precioCard'> $ {product.price}</p>
+      <button className='btnCard'><Link to={`/detail/${product.id}`}>Ir al detalle</Link></button>
     </div>
   )
 }

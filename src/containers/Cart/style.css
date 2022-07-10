@@ -1,0 +1,76 @@
+.cartContainer{
+    font-family: 'Trebuchet MS';
+    padding: 1rem 5rem;
+}
+.emptyCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.txtEmpyCart{
+    margin-bottom: 2rem;
+}
+.itemCart{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+.imgCart{
+    width: 8rem;
+    padding: .5rem;
+}
+.titleCart{
+    width: 20%;
+    padding: .5rem;
+}
+.txtCantCart{
+    width: 10%;
+    padding: .5rem;
+}
+.txtPrecioCart,
+.precioTotalCart{
+    width: 15%;
+    padding: .5rem;
+}
+.confirmCart{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+.txtConfirmCart{
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+.confirmCartButtons{
+    display: flex;
+    flex-direction: column;
+}
+.buttonContineShopping,
+.buttonConfirmCheckout{
+    font-family: 'Trebuchet MS';
+    padding: .3rem;
+    margin: .2em;
+    border-radius: .3rem;
+}
+.buttonContineShopping{
+    background-color: #3434aba5;
+    border: 1px solid #3434aba5;
+}
+.buttonConfirmCheckout{
+    background-color: #1f7a1fa7;
+    border: 1px solid #1f7a1fa7;
+}
+.buttonCancel{
+    background-color: #ba3232af;
+    border: 1px solid #ba3232af;
+    font-family: 'Trebuchet MS';
+    font-size: 1rem;
+    padding: .3rem;
+    margin: .2em;
+    border-radius: .3rem;
+}

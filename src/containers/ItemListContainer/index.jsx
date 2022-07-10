@@ -41,7 +41,6 @@ const ItemListContainer = ({ greeting }) => {
     <div className='itemListContainer'>
         <p className='texto'>{greeting}</p>
         {products ? <ItemList products={params?.idCategory ? productsFilter : products}/> : <Loader /> }
-
     </div>
   )
 }

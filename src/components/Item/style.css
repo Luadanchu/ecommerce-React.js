@@ -6,7 +6,24 @@
     margin: .5rem;
     background-color: #ffffff;
     text-align: center;
+    font-family: 'Trebuchet MS';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .imgCard{
     width: 100%;
+}
+.titCard{
+    font-size: 1rem;
+}
+.precioCard{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.btnCard{
+    width: 80%;
+    font-family: 'Trebuchet MS';
+    padding: .5rem;
 }
