@@ -46,7 +46,7 @@ const CartProvider = ({ children }) => {
       cartItems.reduce((previous, current) => previous + current.quantity, 0)
     );
     const total = cartItems.reduce((previous, current) => previous + current.quantity * current.price, 0)
-    setTotalPrice(total)
+    setTotalPrice(total.toFixed(2))
 
   }, [cartItems])
   
