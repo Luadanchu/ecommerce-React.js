@@ -1,7 +1,9 @@
 # E-commerce
 
 ###Install additional packages, run: npm install
+
 ###version 1.0.0
+
 Run npm init
 Create package.json
 Create app: npx create-react-app e-commerce
