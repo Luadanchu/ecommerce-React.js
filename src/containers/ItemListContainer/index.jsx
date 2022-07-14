@@ -24,7 +24,7 @@ const ItemListContainer = ({ greeting }) => {
           console.log(error);
         }
       })();
-    }, 2000);
+    }, 500);
 
   }, [])
 
