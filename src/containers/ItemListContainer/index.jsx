@@ -27,10 +27,6 @@ const ItemListContainer = ({ greeting }) => {
             productos.push({id: doc.id, ...doc.data()})
           });
           //console.log(productos)
-
-          // const resp = await fetch('https://fakestoreapi.com/products');
-          // const data = await resp.json();
-          //console.log(data)
           setProducts(productos);
         } catch (error) {
           console.log(error);
@@ -52,8 +48,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div className='itemListContainer'>
         <p className='texto'>{greeting}</p>
-        {/* <Loader loader={false} /> */}
-        {products ? <ItemList products={params?.idCategory ? productsFilter : products} /> : <Loader loader={true} /> }
+        {products.length !== 0 ? <ItemList products={params?.idCategory ? productsFilter : products} /> : <Loader loader={true} /> }
     </div>
   )
 }
