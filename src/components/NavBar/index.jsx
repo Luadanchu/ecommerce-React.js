@@ -10,10 +10,9 @@ const NavBar = () =>{
       <Link to='/'><img className="logoNav" src='/imagenes/navLogo.png' alt="logo" /></Link>
       <ol>
         <li className="navLink"><Link to='/'>Home</Link></li>
-        <li className="navLink"><Link to="/category/men's clothing">Men</Link></li>
-        <li className="navLink"><Link to='/category/jewelery'>Jewelery</Link></li>
-        <li className="navLink"><Link to='/category/electronics'>Electronics</Link></li>
-        <li className="navLink"><Link to="/category/women's clothing">Women</Link></li>
+        <li className="navLink"><Link to="/category/Mates">Mates</Link></li>
+        <li className="navLink"><Link to='/category/Yerbera'>Yerbera</Link></li>
+        <li className="navLink"><Link to='/category/Equipos de mate'>Equipos</Link></li>
       </ol>
       <CardWidget />
     </nav>

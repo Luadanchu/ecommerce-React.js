@@ -4,5 +4,6 @@
 }
 .texto{
     font-family: 'Trebuchet MS';
-    /* font-size: 1.5rem; */
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }

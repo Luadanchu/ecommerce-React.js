@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "title": "Un Mate - Re Black + Bombilla",
+        "price": 7890.95,
+        "description": "Mate de Acero inoxidable, con base de silicona, capacidad 230ml. 9.5cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_732807-MLA49151444236_022022-O.webp",
+        "stock": 120
+    },
+    {
+        "id": 2,
+        "title": "Un Re Mate De Acero - Blanco + Bombilla",
+        "price": 4980.95,
+        "description": "Mate de Acero inoxidable, capacidad 160ml. 8cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_635406-MLA46825980486_072021-O.webp",
+        "stock": 150
+    },
+    {
+        "id": 3,
+        "title": "Un Mate - Coral Bronze + Bombilla",
+        "price": 7890.95,
+        "description": "Mate de Acero inoxidable, con base de silicona, capacidad 230ml. 9.5cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_662115-MLA49151357393_022022-O.webp",
+        "stock": 290
+    },
+    {
+        "id": 4,
+        "title": "Un Mate - Oliva Green + Bombilla",
+        "price": 7890.90,
+        "description": "Mate de Acero inoxidable, con base de silicona, capacidad 230ml. 9.5cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_717239-MLA49151346655_022022-O.webp",
+        "stock": 100
+    },
+    {
+        "id": 5,
+        "title": "Un Re Mate De Acero - Amarillo + Bombilla",
+        "price": 4980.95,
+        "description": "Mate de Acero inoxidable, capacidad 160ml. 8cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_962580-MLA47614386327_092021-O.webp",
+        "stock": 230
+    },
+    {
+        "id": 6,
+        "title": "Un Mate Acero - Negro + Bombilla",
+        "price": 4980.95,
+        "description": "Mate de Acero inoxidable, capacidad 125ml. 6.5cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_737267-MLA47233751193_082021-O.webp",
+        "stock": 160
+    },
+    {
+        "id": 7,
+        "title": "Un Mate De Acero Inoxidable + Bombilla - Platino",
+        "price": 4980.95,
+        "description": "Mate de Acero inoxidable, capacidad 125ml. 6.5cm de ancho y 9cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_741077-MLA46796888603_072021-O.webp",
+        "stock": 290
+    },
+    {
+        "id": 8,
+        "title": "Un Matecito Acero + Bombilla",
+        "price": 3980.90,
+        "description": "Mate de Acero inoxidable, 8cm de ancho y 8cm de alto. Bombilla incluída",
+        "category": "Mates",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_733159-MLA48550789161_122021-O.webp",
+        "stock": 195
+    },
+    {
+        "id": 9,
+        "title": "Equipo De Mate - Matero Un Mate Negro",
+        "price": 17460.99,
+        "description": "MATERA - Mochila/Morral: Impermeable, Separador para Termo | Bombilla | Mate y Latas, Correa regulable, Función intercambiable: Mochila o Morral. Medidas: Mate: 9,5cm x 6,5cm x 7,5cm; Latas: 9cm x 19cm x 9cm; Matero: 25cm x 39cm x 11cm Bolso",
+        "category": "Equipos de mate",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_882290-MLA47428046163_092021-O.webp",
+        "stock": 125
+    },
+    {
+        "id": 10,
+        "title": "Pack Matero Un Mate - Mochilero Black",
+        "price": 23260.99,
+        "description": "Mochila matera: De cordura impermeable, Separador para Termo | Bombilla | Mate y Latas, Correa regulable. Medidas: 39cm x 29cm x 15cm",
+        "category": "Equipos de mate",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_839002-MLA49971037614_052022-O.webp",
+        "stock": 136
+    },
+    {
+        "id": 11,
+        "title": "Set Matero - Mochilero Militar",
+        "price": 21980.90,
+        "description": "Mochila matera: De cordura impermeable, Separador para Termo | Bombilla | Mate y Latas, Correa regulable. Medidas: 39cm x 29cm x 15cm",
+        "category": "Equipos de mate",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_919340-MLA49971060517_052022-O.webp",
+        "stock": 336
+    },
+    {
+        "id": 12,
+        "title": "Una Yerbera Un Mate Xl - Black (500g)",
+        "price": 1900.95,
+        "description": "Lata yerbera con tapa, medidas: 11.5cm x 8.5cm x 19cm. Capacidad: 1.5L",
+        "category": "Yerbera",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_893580-MLA45732144880_042021-O.webp",
+        "stock": 236
+    },
+    {
+        "id": 13,
+        "title": "Una Yerbera Un Mate - Negro 250g",
+        "price": 1480.99,
+        "description": "Lata yerbera con tapa, medidas: 7cm x 7cm x 175cm. Capacidad: 250ml",
+        "category": "Yerbera",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_917967-MLA49293691186_032022-O.webp",
+        "stock": 236
+    },
+    {
+        "id": 14,
+        "title": "Una Yerbera Un Mate Xl - White (500g)",
+        "price": 1900.95,
+        "description": "Lata yerbera con tapa, medidas: 11.5cm x 8.5cm x 19cm. Capacidad: 1.5L",
+        "category": "Yerbera",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_879824-MLA45732188401_042021-O.webp",
+        "stock": 266
+    }
+]

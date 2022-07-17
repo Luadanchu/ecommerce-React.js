@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../../components/ItemList'
 import Loader from '../../components/Loader'
+import { collection, query, getDocs } from 'firebase/firestore'
 import './style.css'
+import { db } from '../../firebase/config'
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -16,10 +18,20 @@ const ItemListContainer = ({ greeting }) => {
     setTimeout(() => {
       (async () => {
         try {
-          const resp = await fetch('https://fakestoreapi.com/products');
-          const data = await resp.json();
+          const q = query(collection(db, "products"));
+          const querySnapshot = await getDocs(q);
+          const productos = []
+          querySnapshot.forEach((doc) => {
+            //doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
+            productos.push({id: doc.id, ...doc.data()})
+          });
+          //console.log(productos)
+
+          // const resp = await fetch('https://fakestoreapi.com/products');
+          // const data = await resp.json();
           //console.log(data)
-          setProducts(data);
+          setProducts(productos);
         } catch (error) {
           console.log(error);
         }
@@ -40,7 +52,8 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div className='itemListContainer'>
         <p className='texto'>{greeting}</p>
-        {products ? <ItemList products={params?.idCategory ? productsFilter : products}/> : <Loader /> }
+        {/* <Loader loader={false} /> */}
+        {products ? <ItemList products={params?.idCategory ? productsFilter : products} /> : <Loader loader={true} /> }
     </div>
   )
 }
