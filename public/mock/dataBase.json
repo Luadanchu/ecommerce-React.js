@@ -124,5 +124,23 @@
         "category": "Yerbera",
         "image": "https://http2.mlstatic.com/D_NQ_NP_879824-MLA45732188401_042021-O.webp",
         "stock": 266
+    },
+    {
+        "id": 15,
+        "title": "Una Yerbera Un Mate Xl - Cobre (500g)",
+        "price": 1900.95,
+        "description": "Lata yerbera con tapa, medidas: 11.5cm x 8.5cm x 19cm. Capacidad: 1.5L",
+        "category": "Yerbera",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_604503-MLA50739685212_072022-O.webp",
+        "stock": 122
+    },
+    {
+        "id": 16,
+        "title": "Pack Matero Un Mate - Bolso Militar",
+        "price": 19600.90,
+        "description": "Mochila matera: De cordura impermeable, Separador para Termo | Bombilla | Mate y Latas, Correa regulable. Medidas: 25cm x 39cm x 11cm",
+        "category": "Equipos de mate",
+        "image": "https://http2.mlstatic.com/D_NQ_NP_953018-MLA50090562437_052022-O.webp",
+        "stock": 283
     }
 ]

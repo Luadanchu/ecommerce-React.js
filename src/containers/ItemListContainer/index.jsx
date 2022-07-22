@@ -10,30 +10,28 @@ import { db } from '../../firebase/config'
 const ItemListContainer = ({ greeting }) => {
 
   const [products, setProducts] = useState([])
-  const [productsFilter, setproductsFilter ] = useState([]);
+  const [productsFilter, setproductsFilter] = useState([]);
   const params = useParams()
   //console.log(param)
-  
-  useEffect(() => {
-    setTimeout(() => {
-      (async () => {
-        try {
-          const q = query(collection(db, "products"));
-          const querySnapshot = await getDocs(q);
-          const productos = []
-          querySnapshot.forEach((doc) => {
-            //doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
-            productos.push({id: doc.id, ...doc.data()})
-          });
-          //console.log(productos)
-          setProducts(productos);
-        } catch (error) {
-          console.log(error);
-        }
-      })();
-    }, 500);
 
+  
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const q = query(collection(db, "products"));
+        const querySnapshot = await getDocs(q);
+        const productos = [];
+        querySnapshot.forEach((doc) => {
+          //console.log(doc.id, " => ", doc.data());
+          productos.push({id: doc.id, ...doc.data()})
+        });
+        //console.log(productos)
+        setProducts(productos);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, [])
 
   useEffect(() => {
@@ -54,14 +52,3 @@ const ItemListContainer = ({ greeting }) => {
 }
 
 export default ItemListContainer
-
-
-//ACÁ VA TODA LA LÓGICA => Puedo hacer la petición en un helper
-
-/* Este es el contenedor de la tienda, itemList: contenedor de cards, y el Item es la card en sí*/
-
-//item list container es 1er pantalla, donde veo todo
-//itemList solo hace el map!!
-//item solo la vista de la card!!
-//item detalle contenedor, 2da pantalla, va a estar el contador con la descripción!!
-//3ra vista el carrito

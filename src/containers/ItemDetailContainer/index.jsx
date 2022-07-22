@@ -35,9 +35,6 @@ const ItemDetailContainer = () => {
       }
     }
     getItem()
-    // setTimeout(() => {
-    //  getItem()
-    // }, 2000);
 
   }, [param])
   

@@ -34,7 +34,7 @@ const ItemDetail = ({ product }) => {
         {(newCount <= 0) ? 
           <ItemCount handleAdd={ handleAdd } initial={1} stock={ product.stock } />
           :
-          <button className='buttonCheckout' onClick={ handleCheckout } > Checkout </button>
+          <button className='buttonCheckout' onClick={ handleCheckout } > Confirm </button>
         }
       </div>
     </div>

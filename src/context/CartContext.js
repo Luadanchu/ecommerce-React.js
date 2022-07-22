@@ -49,7 +49,6 @@ const CartProvider = ({ children }) => {
     setTotalPrice(total.toFixed(2))
 
   }, [cartItems])
-  
 
   return (
     <ShopCart.Provider value={{ buy, setBuy, addItemCart, cartItems, totalPrice, removeItem, Quantity, clear }}>

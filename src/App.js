@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFound from './components/NotFound';
 import Cart from './containers/Cart';
 import CartProvider from './context/CartContext';
-// import '/imagenes/navLogo.png'
+import Order from './components/Order/Order';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
               <Route path='/category/:idCategory' element={<ItemListContainer />} />
               <Route path='/detail/:idProduct' element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />} />
+              <Route path='/Order' element={<Order />} />
+              <Route path='/Checkout' element={<Checkout />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
         </div>

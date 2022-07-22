@@ -17,8 +17,6 @@ const CardWidget = () => {
     <div className='widgetComplete'>
       <FaShoppingCart size={30} className='cartIcon'  onClick={ handleCart } />
       {(cartItems.length  > 0) ? <span className='spanCartItems'>{cartItems.length}</span> : ' '}
-      
-
     </div>
   )
 }
