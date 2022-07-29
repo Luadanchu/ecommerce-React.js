@@ -1,12 +1,20 @@
+header{
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 nav{
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: .2rem;
+    padding: .8rem 10rem;
     margin-top: .4rem;
-    background-color: #1e1e1e;
+    background-color: #1a1a1a;
 }
 ol{
     width: 20%;
@@ -24,10 +32,14 @@ li a {
     text-decoration: none;
     color: black;
     font-weight: 550;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #ffffff;
 }
 .logoNav{
-    width: 6rem;
+    width: 8rem;
     margin: .5rem 2rem;
-  }
+}
+.imgInicio{
+    width: 50%;
+    padding: 1rem;
+}

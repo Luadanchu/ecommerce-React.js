@@ -45,7 +45,6 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <div className='itemListContainer'>
-        <p className='texto'>{greeting}</p>
         {products.length !== 0 ? <ItemList products={params?.idCategory ? productsFilter : products} /> : <Loader loader={true} /> }
     </div>
   )

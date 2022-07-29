@@ -22,8 +22,8 @@ const confirmOrder = (cartItems, printOrder) => {
         
       } else {
         outOfStock.push(product)
+        console.log(`Out of Stock: ${outOfStock}`)
       }
-      console.log(`Out of Stock: ${outOfStock}`)
       
       if (outOfStock.length === 0) {
         addDoc(collection(db, 'orders'), printOrder).then(({ id }) => {

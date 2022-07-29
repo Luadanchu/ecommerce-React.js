@@ -5,15 +5,21 @@ export const ShopCart = createContext();
 const CartProvider = ({ children }) => {
 
   const [buy, setBuy] = useState('Valor del context')
-  const [cartItems, setCartItems] = useState([]) //Guardar el localStorage
   const [Quantity, setQuantity] = useState(0) 
   const [totalPrice, setTotalPrice] = useState(0) 
 
+  const [cartItems, setCartItems] = useState(() => {
+    try{
+      const cartItemsStorage = localStorage.getItem('cart', 'cartItems')
+      return cartItemsStorage ? JSON.parse(cartItemsStorage) : []
+    } catch {
+      return []
+    }
+  }) 
+  
   const addItemCart = (product, quantity) =>{
-    //console.log(product, quantity)
 
     const existentProduct = isInCart(product.id)
-    //console.log(existentProduct)
 
     if (existentProduct){
       existentProduct.quantity += quantity
@@ -42,6 +48,8 @@ const CartProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems))
+
     setQuantity(
       cartItems.reduce((previous, current) => previous + current.quantity, 0)
     );

@@ -1,22 +1,16 @@
 .formContainer{
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
-    padding-top: 5rem;
+    width: 60%;
+    padding: 3rem  0 3rem 0;
+    margin: 2rem 0;
 }
 form{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     padding: 1rem;
-}
-.formControl{
-    padding: .4rem;
-    margin: .3rem;
-}
-.buttonForm{
-    width: 35%;
-    padding: .4rem .1rem;
 }

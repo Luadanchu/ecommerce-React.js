@@ -1,0 +1,27 @@
+.containerGralFooter{
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    padding: 3rem 5rem 1rem 5rem;
+}
+.containerFooter{
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ffffffda;
+    margin-bottom: 1rem;
+}
+.containerDivFooter{
+    width: 33%;
+    text-align: center;
+}
+
+.logoFooter{
+    width: 20rem;
+}

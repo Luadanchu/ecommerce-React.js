@@ -1,12 +1,14 @@
 import React from 'react'
+import { Typography, Button } from '@mui/material'
 
 const Checkout = () => {
 
-    return (
-        <div>
-            <p>Confirmación de Compra</p>
-        </div>
-    );
+  return (
+    <div>
+        <Typography>Confirmación de Compra</Typography>
+        <Button >Return</Button >
+    </div>
+  );
 }
 
 export default Checkout

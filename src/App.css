@@ -8,17 +8,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: #484848;
   min-height: 100vh;
-  padding: 0 .5rem;
 }
-
-/* header{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: .5rem 1rem;
-  background-color: #c9c9c9;
-  width: 100%;
-} */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  margin: 0;
+  background-color: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #484848;
+  border-radius: 0.5rem;
+  border-right: solid #000000 2px;
+}
 

@@ -1,58 +1,194 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import confirmOrder from '../../auxFunctions/confirmOrder';
 import { ShopCart } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
+import TextField from '@mui/material/TextField';
+import { Typography, Button } from '@mui/material'
 import './style.css'
 
 const Order = () => {
 
+   const initialValues = {
+      firstname: '',
+      lastname: '',
+      email: ''
+   }
    const {cartItems, totalPrice, clear} = useContext(ShopCart);
-   const nav = useNavigate()
-   const [firstname, setFirstName] = useState('')
-   const [lastname, setLastName] = useState('')
-   const [email, setEmail] = useState('')
-   const [emailCheck, setEmailCheck] = useState('')
-   const [address, setAddress] = useState('')
+   const nav = useNavigate();
+   const [formValues, setFormValues] = useState(initialValues);
+   const [formErrors, setFormErrors] = useState({});
+   const [submit, setSubmit] = useState(false)
 
-   const newOrder = (date, firstName, lastName, email, cart, total) => {
+   const newOrder = (date, firstname, lastname, email, cart, total) => {
       return {
          date: new Date().toLocaleString(),
-         buyer: {
-            firstName: firstName,
-            lastName: lastName,
-            email: email
+         // buyer: values,
+         buyer:{
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
          },
          items: cartItems,
          total: {totalPrice}
       }
    }
-
-   const handleCheckout = () => {
+   
+   const finalOrder = async () => {
+      const printOrder = newOrder(new Date().toLocaleString(), formValues.firstname, formValues.lastname, formValues.email, cartItems, totalPrice)
+      confirmOrder(cartItems, printOrder)
+      clear()
       nav('/Checkout')
    }
-   const finalOrder = async () => {
-      const printOrder = newOrder(new Date().toLocaleString(), firstname, lastname, email, cartItems, {totalPrice})
-      confirmOrder(cartItems, printOrder)
-      clear() //ALERT O ALGO QUE LE DIGA AL CLIENTE QUE ESTÁ LA ORDEN!!
-      handleCheckout()
+
+   const handleChange = (e) => {
+      const {name, value} = e.target;
+      setFormValues({...formValues, [name]: value});
+   };
+
+   const errors = {}
+   const validateForm = (values) => {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+      const rgx = /^[A-Z]+$/i;
+
+      if(!values.firstname){
+         errors.firstname = "First name is required"
+      }else if(!rgx.test(values.firstname)){
+         errors.email = "No valid format"
+      }
+      if(!values.lastname){
+         errors.lastname = "Last name is required"
+      }else if(!rgx.test(values.lastname)){
+         errors.email = "No valid format"
+      }
+      if(!values.email){
+         errors.email = "Email is required"
+      } else if(!regex.test(values.email)){
+         errors.email = "No valid email format"
+      }
+      return errors;
    }
+   
+   const handleSubmit = (e) =>{
+      e.preventDefault();
+      setFormErrors(validateForm(formValues))
+      setSubmit(true)
+   }
+
+   useEffect(() => {
+      //console.log(formErrors)
+      if(Object.keys(formErrors).length === 0 && submit){
+         finalOrder()
+      }
+   })
 
    return (
       <div className='formContainer'>
+         {/* <form onSubmit={handleSubmit}> */}
          <form>
-            <input className='formControl' type="text" value={firstname} onChange={e=>setFirstName(e.target.value)} placeholder="First name"/>
-            <input className='formControl' type="text" value={lastname} onChange={e=>setLastName(e.target.value)} placeholder="Last name"/>
+            <TextField 
+               // className='formControl'
+               label="First name" 
+               variant="filled"
+               type="text" 
+               name='firstname'
+               value={formValues.firstname} 
+               onChange={handleChange} 
+               margin="dense"
+            /><Typography 
+            variant="p" 
+            component="div" 
+            sx={{ 
+               fontSize:'1rem', 
+               color:"#c62828" 
+            }}>
+            {formErrors.firstname}
+         </Typography>
+            <TextField 
+               // className='formControl' 
+               label="Last name" 
+               variant="filled" 
+               type="text"
+               name='lastname'
+               value={formValues.lastname} 
+               onChange={handleChange} 
+               margin="dense"
+            />
+            <Typography 
+               variant="p" 
+               component="div" 
+               sx={{ 
+                  fontSize:'1rem', 
+                  color:"#c62828" 
+               }}>
+               {formErrors.lastname}
+            </Typography>
+            <TextField 
+               // className='formControl' 
+               label="email@example.com" 
+               variant="filled"
+               type='email' 
+               name='email'
+               value={formValues.email} 
+               onChange={handleChange} 
+               margin="dense"
+            />
+            <Typography 
+               variant="p" 
+               component="div" 
+               sx={{ 
+                  fontSize:'1rem', 
+                  color:"#c62828" 
+               }}>
+               {formErrors.email}
+            </Typography>
+            <TextField 
+               // className='formControl'
+               label="sameEmail@example.com" 
+               variant="filled"
+               type='email'
+               name='emailCheck' 
+               value={formValues.emailCheck}
+               onChange={handleChange} 
+               margin="dense"
+            />
+            <Typography 
+               variant="p" 
+               component="div" 
+               sx={{ 
+                  fontSize:'1rem', 
+                  color:"#c62828"
+               }}>
+               {formErrors.email}
+            </Typography>
 
-            <input className='formControl' value={email} onChange={e=>setEmail(e.target.value)} type='email' placeholder="email@example.com"/>
-            <input className='formControl' value={emailCheck} onChange={e=>setEmailCheck(e.target.value)} type='email' placeholder="email@example.com" />
-
-            {email !== emailCheck ? <p>email doesn't match</p> : true }
-
-            <input className='formControl' value={address} onChange={e=>setAddress(e.target.value)} type='text' placeholder="Address"/>
+            {formValues.email !== formValues.emailCheck ? 
+            <Typography 
+               variant="p" 
+               component="div" 
+               sx={{ 
+                  fontSize:'1rem', 
+                  color:"#c62828"
+               }}>
+               Email doesn't match
+            </Typography>
+         : true }
          </form>
             
-         <button className='buttonForm' onClick={finalOrder} type="submit">Terminar Compra</button>
-
+         <Button 
+            variant='outlined' 
+            color="success"
+            sx={{ 
+              width:'20%', 
+              fontSize:'1rem', 
+              marginTop:'1rem', 
+              '&:hover': { 
+                  color:'success' 
+              } 
+            }}
+            onClick={handleSubmit} 
+            type='submit'>
+            Send
+            </Button>
       </div>
    );
 }

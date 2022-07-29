@@ -8,6 +8,7 @@ import Cart from './containers/Cart';
 import CartProvider from './context/CartContext';
 import Order from './components/Order/Order';
 import Checkout from './components/Checkout';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <div className="App" >
             <NavBar />
             <Routes>
-              <Route path='/' element={<ItemListContainer greeting={"Tienda Online"} />} />
+              <Route path='/' element={<ItemListContainer />} />
               <Route path='/category/:idCategory' element={<ItemListContainer />} />
               <Route path='/detail/:idProduct' element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />} />
@@ -24,6 +25,7 @@ function App() {
               <Route path='/Checkout' element={<Checkout />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
+            < Footer />
         </div>
       </BrowserRouter>
     </CartProvider>

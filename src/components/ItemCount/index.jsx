@@ -2,6 +2,7 @@ import React from 'react'
 import './style.css'
 import { useState } from 'react'
 import {AiOutlinePlus, AiOutlineMinus} from 'react-icons/ai'
+import { Button, Typography } from '@mui/material'
 
 const ItemCount = ( {handleAdd, stock, initial} ) => {
 
@@ -23,13 +24,52 @@ const ItemCount = ( {handleAdd, stock, initial} ) => {
   return (
     <div className='buttonCard' >
         <div className='buttons' >
-          <AiOutlinePlus size={26} onClick={onAdd} className='buttonAdd' />
-          <p className='txtCant' >{count}</p>
-          <AiOutlineMinus size={26} onClick={onRemove} className='buttonRem' />
+        <Button>
+          <AiOutlinePlus size={26} color='#1a237e' onClick={onAdd} />
+        </Button>
+
+          <Typography 
+            variant="subtitle1" 
+            color="text.secondary" 
+            component="div" 
+            sx={{ 
+              fontSize:'1.8rem', 
+              color:'#303f9f' 
+              }}>
+            {count}
+          </Typography>
+          
+          <Button>
+            <AiOutlineMinus size={26} color='#1a237e' onClick={onRemove} />
+          </Button>
         </div>
         
-        <button onClick={() => handleAdd(count)} className='buttonAddToCart' >Add to cart</button>
-        <button onClick={resetCount} className='buttonCleanCart' >Reset</button>
+        <Button 
+          variant='outlined' 
+          color="success"
+          sx={{ width:'100%', 
+            fontSize:'1rem', 
+            marginTop:'1rem', 
+            '&:hover': { 
+              color:'success' 
+            } 
+          }}  
+          onClick={() => handleAdd(count)} >
+            Add to cart
+        </Button>
+        <Button 
+          color="error"
+          sx={{ 
+            width:'100%', 
+            fontSize:'.8rem', 
+            marginTop:'.5rem', 
+            '&:hover': { 
+              color:'error' 
+            } 
+          }} 
+          onClick={resetCount} >
+            Reset
+        </Button>
     </div>
   )
 }

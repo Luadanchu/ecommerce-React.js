@@ -1,29 +1,33 @@
 
 .card{
-    width: 20%;
-    border: 1px solid #848484;
-    padding: 1rem;
-    margin: .5rem;
+    width: 20rem;
+    height: 25rem;
+    margin: 1rem auto;
     background-color: #ffffff;
-    text-align: center;
-    font-family: 'Trebuchet MS';
+    border-radius: 8px;  
+    position: relative; 
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+   
 }
+
+.card:hover{  
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
 .imgCard{
     width: 100%;
+    object-fit: contain; 
 }
+
 .titCard{
-    font-size: 1rem;
-}
-.precioCard{
-    font-size: 1rem;
-    font-weight: 600;
-}
-.btnCard{
-    width: 80%;
-    font-family: 'Trebuchet MS';
-    padding: .5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #0000007b;
+    border-radius: 0  0 8px 8px;  
+    color: #FFF;
+    font-size: .9rem;
+    padding: .8rem;
 }
