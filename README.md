@@ -1,7 +1,7 @@
 # Un mate - Tienda online
 
-Tienda online de venta de equipos y accesorioa para el mate.
-Filtro por categorías, detalle de producto, detalle de cart, control de stock, formulario de datos, compra finalizada y subida a Firebase.
+Tienda online de venta de equipos y accesorios para mate. <br>
+Filtro por categorías, detalle de producto, detalle de cart, control de stock, formulario de datos con validación de campos y de email, compra finalizada y subida a Firebase.
 
 ## Proyecto final React.js CoderHouse
 
