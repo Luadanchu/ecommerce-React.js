@@ -1,9 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import confirmOrder from '../../auxFunctions/confirmOrder';
 import { ShopCart } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import TextField from '@mui/material/TextField';
 import { Typography, Button } from '@mui/material'
+import emailjs from '@emailjs/browser';
 import './style.css'
 
 const Order = () => {
@@ -13,6 +14,7 @@ const Order = () => {
    const [formValues, setFormValues] = useState('');
    const [formErrors, setFormErrors] = useState({});
    const [submit, setSubmit] = useState(false)
+   const form = useRef();
 
    const newOrder = (date, firstname, lastname, email, cart, total) => {
       return {
@@ -27,9 +29,19 @@ const Order = () => {
       }
    }
    
+   const sendEmail = (e) => {  
+      emailjs.sendForm('service_fdlefua', 'template_3ecg3j4', form.current, 'JQFtY2HVQ3nV1y5aE')
+         .then((result) => {
+            console.log(result.text);
+         }, (error) => {
+            console.log(error.text);
+      });
+   };
+
    const finalOrder = async () => {
       const printOrder = newOrder(new Date().toLocaleString(), formValues.firstname, formValues.lastname, formValues.email, cartItems, totalPrice)
       confirmOrder(cartItems, printOrder)
+      sendEmail()
       clear()
       nav('/Checkout')
    }
@@ -74,9 +86,10 @@ const Order = () => {
       }
    })
 
+
    return (
       <div className='formContainer'>
-         <form>
+         <form ref={form} onSubmit={sendEmail} >
             {!formErrors.firstname ?
                <TextField 
                   label="First name" 
