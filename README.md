@@ -24,4 +24,4 @@ Filtro por categorías, detalle de producto, detalle de cart, control de stock, 
 - Materual ui
 - React icons
 
-<img src="/gif/UnMateTiendaOnline.gif" width="400" height="400" />
+![](/gif/UnMateTiendaOnline.gif)
