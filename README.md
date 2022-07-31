@@ -26,4 +26,4 @@ Filtro por categorías, detalle de producto, detalle de cart, control de stock, 
 
 ## Funcionamiento
 
-![UnMateTiendaOnline](https://user-images.githubusercontent.com/98982853/182049815-5c1b1f37-2436-45b7-b678-599b79f0bcd1.gif)
+![UnMateTiendaOnline](https://user-images.githubusercontent.com/98982853/182049948-fe3b22f7-3c5d-4715-8d9f-40f08f1e4a27.gif)
