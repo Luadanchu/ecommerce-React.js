@@ -8,21 +8,15 @@ import './style.css'
 
 const Order = () => {
 
-   const initialValues = {
-      firstname: '',
-      lastname: '',
-      email: ''
-   }
    const {cartItems, totalPrice, clear} = useContext(ShopCart);
    const nav = useNavigate();
-   const [formValues, setFormValues] = useState(initialValues);
+   const [formValues, setFormValues] = useState('');
    const [formErrors, setFormErrors] = useState({});
    const [submit, setSubmit] = useState(false)
 
    const newOrder = (date, firstname, lastname, email, cart, total) => {
       return {
          date: new Date().toLocaleString(),
-         // buyer: values,
          buyer:{
             firstname: firstname,
             lastname: lastname,
@@ -53,12 +47,12 @@ const Order = () => {
       if(!values.firstname){
          errors.firstname = "First name is required"
       }else if(!rgx.test(values.firstname)){
-         errors.email = "No valid format"
+         errors.firstname = "No valid format"
       }
       if(!values.lastname){
          errors.lastname = "Last name is required"
       }else if(!rgx.test(values.lastname)){
-         errors.email = "No valid format"
+         errors.lastname = "No valid format"
       }
       if(!values.email){
          errors.email = "Email is required"
@@ -75,7 +69,6 @@ const Order = () => {
    }
 
    useEffect(() => {
-      //console.log(formErrors)
       if(Object.keys(formErrors).length === 0 && submit){
          finalOrder()
       }
@@ -83,95 +76,94 @@ const Order = () => {
 
    return (
       <div className='formContainer'>
-         {/* <form onSubmit={handleSubmit}> */}
          <form>
-            <TextField 
-               // className='formControl'
-               label="First name" 
-               variant="filled"
-               type="text" 
-               name='firstname'
-               value={formValues.firstname} 
-               onChange={handleChange} 
-               margin="dense"
-            /><Typography 
-            variant="p" 
-            component="div" 
-            sx={{ 
-               fontSize:'1rem', 
-               color:"#c62828" 
-            }}>
-            {formErrors.firstname}
-         </Typography>
-            <TextField 
-               // className='formControl' 
-               label="Last name" 
-               variant="filled" 
-               type="text"
-               name='lastname'
-               value={formValues.lastname} 
-               onChange={handleChange} 
-               margin="dense"
-            />
-            <Typography 
-               variant="p" 
-               component="div" 
-               sx={{ 
-                  fontSize:'1rem', 
-                  color:"#c62828" 
-               }}>
-               {formErrors.lastname}
-            </Typography>
-            <TextField 
-               // className='formControl' 
-               label="email@example.com" 
-               variant="filled"
-               type='email' 
-               name='email'
-               value={formValues.email} 
-               onChange={handleChange} 
-               margin="dense"
-            />
-            <Typography 
-               variant="p" 
-               component="div" 
-               sx={{ 
-                  fontSize:'1rem', 
-                  color:"#c62828" 
-               }}>
-               {formErrors.email}
-            </Typography>
-            <TextField 
-               // className='formControl'
-               label="sameEmail@example.com" 
-               variant="filled"
-               type='email'
-               name='emailCheck' 
-               value={formValues.emailCheck}
-               onChange={handleChange} 
-               margin="dense"
-            />
-            <Typography 
-               variant="p" 
-               component="div" 
-               sx={{ 
-                  fontSize:'1rem', 
-                  color:"#c62828"
-               }}>
-               {formErrors.email}
-            </Typography>
-
+            {!formErrors.firstname ?
+               <TextField 
+                  label="First name" 
+                  variant="filled"
+                  type="text" 
+                  name='firstname'
+                  value={formValues.firstname} 
+                  onChange={handleChange} 
+                  margin="dense"
+               />
+               :
+               <TextField
+                  error
+                  id="filled-error-helper-text"
+                  defaultValue="Hello World"
+                  helperText= {formErrors.firstname}
+                  variant="filled"
+               />
+            }
+            {!formErrors.lastname ?
+               <TextField  
+                  label="Last name" 
+                  variant="filled" 
+                  type="text"
+                  name='lastname'
+                  value={formValues.lastname} 
+                  onChange={handleChange} 
+                  margin="dense"
+               />
+               :
+               <TextField
+                  error
+                  id="filled-error-helper-text"
+                  defaultValue="Hello World"
+                  helperText= {formErrors.lastname}
+                  variant="filled"
+               />
+            }
+            {!formErrors.email ?
+               <TextField 
+                  label="email@example.com" 
+                  variant="filled"
+                  type='email' 
+                  name='email'
+                  value={formValues.email} 
+                  onChange={handleChange} 
+                  margin="dense"
+               />
+               :
+               <TextField
+                  error
+                  id="filled-error-helper-text"
+                  defaultValue="Hello World"
+                  helperText= {formErrors.email}
+                  variant="filled"
+               />
+            }
+            {!formErrors.emailCheck ?
+               <TextField 
+                  label="sameEmail@example.com" 
+                  variant="filled"
+                  type='email'
+                  name='emailCheck' 
+                  value={formValues.emailCheck}
+                  onChange={handleChange} 
+                  margin="dense"
+               />
+               :
+               <TextField
+                  error
+                  id="filled-error-helper-text"
+                  defaultValue="Hello World"
+                  helperText= {formErrors.email}
+                  variant="filled"
+               />
+            }
             {formValues.email !== formValues.emailCheck ? 
-            <Typography 
-               variant="p" 
-               component="div" 
-               sx={{ 
-                  fontSize:'1rem', 
-                  color:"#c62828"
-               }}>
-               Email doesn't match
-            </Typography>
-         : true }
+               <Typography 
+                  variant="p" 
+                  component="div" 
+                  sx={{ 
+                     fontSize:'.8rem', 
+                     color:"#c62828"
+                  }}>
+                  Email doesn't match
+               </Typography>
+            : true }
          </form>
             
          <Button 

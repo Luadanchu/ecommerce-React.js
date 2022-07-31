@@ -1,24 +1,21 @@
 import React, { useState, useContext }  from 'react'
 import ItemCount from '../ItemCount'
-import './style.css'
 import { useNavigate } from 'react-router-dom'
 import { ShopCart } from '../../context/CartContext'
 import { Typography, Button } from '@mui/material'
+import './style.css'
 
 const ItemDetail = ({ product }) => {
 
-    //console.log(product)
-    const nav = useNavigate()
+  const nav = useNavigate()
 
-    const [newCount, setNewCount] = useState(0)
+  const [newCount, setNewCount] = useState(0)
 
-    const {addItemCart} = useContext(ShopCart)
+  const {addItemCart} = useContext(ShopCart)
 
-    const handleAdd = (count) =>{
-      setNewCount(count);
-      console.log(`Se agregaron ${count} productos al carrito`) //Alert?
-    }
-    //console.log(newCount)
+  const handleAdd = (count) =>{
+    setNewCount(count)
+  }
 
     const handleCheckout = () =>{
       addItemCart(product, newCount)

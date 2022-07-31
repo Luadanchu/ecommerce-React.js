@@ -1,0 +1,11 @@
+.checkOutCont{
+    background-color: #ffffff;
+    width: 70vw;
+    height: 40vh;
+    margin: 2rem 0;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -4,17 +4,14 @@ import { useParams } from 'react-router-dom'
 import ItemList from '../../components/ItemList'
 import Loader from '../../components/Loader'
 import { collection, query, getDocs } from 'firebase/firestore'
-import './style.css'
 import { db } from '../../firebase/config'
+import './style.css'
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
   const [products, setProducts] = useState([])
   const [productsFilter, setproductsFilter] = useState([]);
   const params = useParams()
-  //console.log(param)
-
-  
 
   useEffect(() => {
     (async () => {
@@ -23,25 +20,20 @@ const ItemListContainer = ({ greeting }) => {
         const querySnapshot = await getDocs(q);
         const productos = [];
         querySnapshot.forEach((doc) => {
-          //console.log(doc.id, " => ", doc.data());
           productos.push({id: doc.id, ...doc.data()})
         });
-        //console.log(productos)
-        setProducts(productos);
+        if(params?.idCategory){
+          const productsFilter = productos.filter(producto => producto.category === params.idCategory)
+          setproductsFilter(productsFilter); 
+        } else{
+          setProducts(productos);
+        }
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [])
-
-  useEffect(() => {
-    if(params?.idCategory){
-      const productsFilter = products.filter(producto => producto.category === params.idCategory)
-      setproductsFilter(productsFilter); 
-    }  
-  }, [params, products])
-  
-  //console.log(products)
+    
+  }, [params.idCategory])
 
   return (
     <div className='itemListContainer'>
